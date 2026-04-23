@@ -1,0 +1,21 @@
+# OS-filer
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Loggfiler
+*.log
+
+# Midlertidige filer
+*.tmp
+*.swp
+
+# Node (kun hvis dere bruker det senere)
+node_modules/
+dist/
+
+# Environment filer (hvis dere bruker det senere)
+.env
