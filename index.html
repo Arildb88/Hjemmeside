@@ -3,74 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hjem</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-    }
-
-    header {
-      background-color: #1f3c88;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #163172;
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Aktiv side */
-    .active {
-      text-decoration: underline;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    h2 {
-      color: #1f3c88;
-    }
-  </style>
+  <title>Prosjektside</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <h1>Velkommen til vår prosjekt-side</h1>
-    <p>Presentasjon av gruppen vår</p>
+  <header class="hero" id="hjem">
+    <div class="hero-content">
+      <p class="eyebrow">Prosjektgruppe</p>
+      <h1>Studentprosjekt i IT og informasjonssystemer</h1>
+      <p class="lead">
+        En samlet side med informasjon om gruppen, prosjektet og fremdriften.
+      </p>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html" class="active">Hjem</a>
-    <a href="omoss.html">Om oss</a>
+  <nav class="site-nav">
+    <a href="#hjem">Hjem</a>
+    <a href="#om-oss">Om oss</a>
+    <a href="#oppgavebeskrivelse">Oppgavebeskrivelse</a>
+    <a href="#status-1">Status 1</a>
+    <a href="#status-2">Status 2</a>
+    <a href="#dagbok">Dagbok</a>
+    <a href="#refleksjon">Refleksjon</a>
   </nav>
 
-  <section>
-    <h2>Hjem</h2>
-    <p>Dette er startsiden til prosjektgruppen vår. Her vil vi presentere hvem vi er og hva vi ønsker å bidra med i studentprosjektet.</p>
-  </section>
+  <main class="container">
+    <section id="om-oss" class="section-card">
+      <h2>Om oss</h2>
+      <p>
+        Vi er en engasjert gruppe studenter som samarbeider om et praktisk og
+        læringsrikt prosjekt. Målet vårt er å levere et gjennomarbeidet resultat
+        med tydelig struktur, gode brukeropplevelser og faglig kvalitet.
+      </p>
 
+      <div class="person-grid">
+        <article class="person-card">
+          <h3>Arild Bjornetro</h3>
+          <p class="role">Student - IT og informasjonssystemer</p>
+          <p>
+            Strukturert og nysgjerrig med erfaring fra flere bransjer. Har fokus
+            pa samarbeid, utvikling og jevn progresjon i prosjektarbeidet.
+          </p>
+          <div class="tags">
+            <span>Python</span>
+            <span>C#</span>
+            <span>JavaScript</span>
+            <span>Front-end</span>
+            <span>Back-end</span>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <h3>Lene Olsen</h3>
+          <p class="role">Potet</p>
+          <p>
+            Starter forste faste jobb som grafisk designer og har over 25 ar
+            erfaring fra arbeidslivet. Bidrar med planlegging, design og helhet.
+          </p>
+          <div class="tags">
+            <span>Prosjektledelse</span>
+            <span>Scrum</span>
+            <span>UX/UI</span>
+            <span>Java</span>
+            <span>Grafisk design</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="oppgavebeskrivelse" class="section-card">
+      <h2>Oppgavebeskrivelse</h2>
+      <p>
+        Her beskriver vi problemstillingen, avgrensninger, metodevalg og
+        leveransekrav. Seksjonen oppdateres etter hvert som detaljene i
+        prosjektet spisses.
+      </p>
+    </section>
+
+    <section id="status-1" class="section-card">
+      <h2>Status 1</h2>
+      <p>
+        Oppstartsfase med planlegging, rollefordeling og definering av
+        milepaeler. Fokus pa grunnmur for resten av prosjektet.
+      </p>
+    </section>
+
+    <section id="status-2" class="section-card">
+      <h2>Status 2</h2>
+      <p>
+        Gjennomforingsfase med videreutvikling, testing og kvalitetssikring.
+        Fokus pa forbedringer basert pa funn og tilbakemeldinger.
+      </p>
+    </section>
+
+    <section id="dagbok" class="section-card">
+      <h2>Dagbok</h2>
+      <p>
+        Lopende notater om arbeidsokter, beslutninger og fremgang. Brukes for a
+        dokumentere prosessen og holde oversikt i teamet.
+      </p>
+    </section>
+
+    <section id="refleksjon" class="section-card">
+      <h2>Refleksjon</h2>
+      <p>
+        Evaluering av hva vi har lart, hva som fungerte godt, og hva vi ville
+        gjort annerledes i neste prosjekt.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
