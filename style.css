@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
 .hero {
   background: linear-gradient(135deg, var(--brand-dark), var(--brand));
   color: #fff;
-  padding: 64px 20px 56px;
+  padding: 30px 20px 26px;
   text-align: center;
 }
 
@@ -46,8 +47,8 @@ body {
 }
 
 .hero h1 {
-  margin: 12px 0 10px;
-  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  margin: 10px 0 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
 }
 
 .lead {
@@ -82,6 +83,11 @@ body {
   background: rgba(255, 255, 255, 0.16);
 }
 
+.site-nav a.active {
+  background: #ffffff;
+  color: var(--brand-dark);
+}
+
 .container {
   width: min(1100px, calc(100% - 32px));
   margin: 28px auto 40px;
@@ -95,7 +101,16 @@ body {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
   padding: 24px;
-  scroll-margin-top: 72px;
+  min-height: calc(100svh - 96px);
+  scroll-margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.snap-panel {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 h2 {
@@ -112,8 +127,10 @@ h2 {
 .person-grid {
   margin-top: 18px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  align-items: start;
 }
 
 .person-card {
@@ -123,9 +140,36 @@ h2 {
   padding: 18px;
 }
 
+.person-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  min-width: 0;
+}
+
+.person-link .person-card {
+  height: 100%;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.person-link:hover .person-card {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.14);
+}
+
 .person-card h3 {
   margin: 0 0 4px;
   color: #0b1f55;
+}
+
+.person-card p {
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .person-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .role {
@@ -134,17 +178,91 @@ h2 {
   margin-bottom: 10px;
 }
 
+.profile-photo {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+  object-fit: cover;
+  display: block;
+}
 .tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 8px;
   margin-top: 14px;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
 }
 
 .tags span {
+  text-align: center;
   background: var(--chip);
   color: #274162;
   border-radius: 999px;
   padding: 6px 12px;
   font-size: 0.9rem;
 }
+
+.social-links {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.open-profile {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #35527b;
+}
+
+.linkedin-link {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a66c2;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.linkedin-link svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.linkedin-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 14px rgba(10, 102, 194, 0.3);
+}
+
+.media-placeholder {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 220px;
+  border: 2px dashed #b4c0d3;
+  border-radius: 12px;
+  background: #f3f7fc;
+  color: #47648c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #fff;
+  background: var(--brand);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-block;
+}
+
