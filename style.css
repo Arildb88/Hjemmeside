@@ -233,6 +233,14 @@ h2 {
   display: inline-block;
 }
 
+.top-back-link {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 50;
+  margin-top: 0;
+}
+
 .video-container {
     position: relative;
     width: 100%;
