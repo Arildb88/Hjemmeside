@@ -1,4 +1,4 @@
 # Hjemmeside
 Praksisfag IS-302
 
-Blir dette lagret?
+https://arildb88.github.io/Hjemmeside/omoss.html
