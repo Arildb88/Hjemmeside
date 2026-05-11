@@ -253,3 +253,11 @@ h2 {
     height: 100%;
     border-radius: 12px;
 }
+
+.presentation-image {
+    width: 75%;
+    max-width: 800px;
+    border-radius: 12px;
+    margin-top: 1rem;
+    display: block;
+}
