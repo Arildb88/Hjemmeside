@@ -261,3 +261,8 @@ h2 {
     margin-top: 1rem;
     display: block;
 }
+
+.hero-content {
+    text-align: center;
+    padding: 60px 20px;
+}
