@@ -254,6 +254,14 @@ h2 {
     border-radius: 12px;
 }
 
+.presentation-image {
+    width: 75%;
+    max-width: 800px;
+    border-radius: 12px;
+    margin-top: 1rem;
+    display: block;
+}
+
 .hero-content {
     text-align: center;
     padding: 60px 20px;
