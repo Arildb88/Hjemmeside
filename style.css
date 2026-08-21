@@ -266,3 +266,8 @@ h2 {
     text-align: center;
     padding: 60px 20px;
 }
+
+.dagbok-scroll {
+    max-height: 550px;
+    overflow-y: auto;
+}
