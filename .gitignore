@@ -5,6 +5,7 @@ Thumbs.db
 # Editor / IDE
 .vscode/
 .idea/
+.vs/
 
 # Loggfiler
 *.log
