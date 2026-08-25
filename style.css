@@ -32,10 +32,15 @@ body {
   background: rgba(15, 23, 42, 0.95);
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 6px;
   padding: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.site-nav img {
+    height: 40px;
+    width: auto;
 }
 
 .site-nav a {
@@ -45,6 +50,12 @@ body {
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 0.95rem;
+}
+
+.site-nav .navbar-brand {
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
 }
 
 .site-nav a:hover {
