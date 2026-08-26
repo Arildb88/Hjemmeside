@@ -71,21 +71,18 @@ body {
   width: min(1100px, calc(100% - 32px));
   margin: 28px auto 40px;
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .section-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  padding: 24px;
-  min-height: calc(100svh - 96px);
-  scroll-margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    padding: clamp(18px, 3vw, 28px);
+    scroll-margin-top: 70px;
 }
+
 
 .snap-panel {
   scroll-snap-align: none;
