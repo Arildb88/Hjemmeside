@@ -5,6 +5,7 @@
   --card: #ffffff;
   --brand: #1f3c88;
   --brand-dark: #163172;
+  --phonero-red: #e30613;
   --chip: #eef2f7;
   --border: #e2e8f0;
 }
@@ -15,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 82px;
 }
 
 body {
@@ -278,4 +280,129 @@ h2 {
 .dagbok-scroll {
     max-height: 550px;
     overflow-y: auto;
+  scroll-padding-top: 72px;
+}
+
+.dagbok-scroll section {
+  scroll-margin-top: 8px;
+}
+
+.diary-week {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.diary-week:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.week-header {
+  margin: 0 0 1rem;
+  color: var(--phonero-red);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.diary-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.diary-timeline {
+  position: relative;
+  display: grid;
+  grid-auto-rows: 22px;
+  gap: 18px;
+  align-content: space-between;
+  align-self: start;
+  padding: 14px 4px 14px 0;
+}
+
+.diary-timeline::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 10px;
+  width: 2px;
+  background: #cbd5e1;
+}
+
+.diary-timeline a {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 22px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.diary-timeline a:hover,
+.diary-timeline a:focus-visible {
+  color: var(--brand-dark);
+}
+
+.diary-timeline a:focus-visible {
+  outline: 3px solid #8db2ff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.timeline-node {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border: 5px solid var(--card);
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diary-timeline a.is-active {
+  color: var(--phonero-red);
+}
+
+.diary-timeline a.is-active .timeline-node {
+  background: var(--phonero-red);
+  box-shadow: 0 0 0 2px var(--phonero-red);
+}
+
+@media (max-width: 600px) {
+  .diary-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .diary-timeline {
+    order: -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 8px;
+    padding: 0 0 4px;
+  }
+
+  .diary-timeline::before {
+    top: 10px;
+    right: 10px;
+    bottom: auto;
+    left: 10px;
+    width: auto;
+    height: 2px;
+  }
+
+  .diary-timeline a {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.75rem;
+  }
 }
