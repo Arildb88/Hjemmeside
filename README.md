@@ -1,4 +1,4 @@
 # Hjemmeside
 Praksisfag IS-302
 
-https://arildb88.github.io/Hjemmeside/omoss.html
+https://arildb88.github.io/Hjemmeside/index.html#hjem
