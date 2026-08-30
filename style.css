@@ -287,9 +287,28 @@ h2 {
   scroll-margin-top: 8px;
 }
 
+.diary-week {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.diary-week:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.week-header {
+  margin: 0 0 1rem;
+  color: var(--phonero-red);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .diary-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 92px;
+  grid-template-columns: minmax(0, 1fr) 120px;
   gap: 24px;
   align-items: stretch;
 }
