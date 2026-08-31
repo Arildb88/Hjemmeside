@@ -139,6 +139,20 @@
       <h2>Dagbok</h2>
       
       <div class="diary-layout">
+        <nav class="diary-timeline" aria-label="Dagboksmåneder">
+          <a href="#19-aug" data-week="34"><span class="timeline-node"></span><span>Uke 34</span></a>
+          <a href="#26-aug" data-week="35"><span class="timeline-node"></span><span>Uke 35</span></a>
+          <a href="#2-sep" data-week="36"><span class="timeline-node"></span><span>Uke 36</span></a>
+          <a href="#9-sep" data-week="37"><span class="timeline-node"></span><span>Uke 37</span></a>
+          <a href="#16-sep" data-week="38"><span class="timeline-node"></span><span>Uke 38</span></a>
+          <a href="#23-sep" data-week="39"><span class="timeline-node"></span><span>Uke 39</span></a>
+          <a href="#30-sep" data-week="40"><span class="timeline-node"></span><span>Uke 40</span></a>
+          <a href="#7-okt" data-week="41"><span class="timeline-node"></span><span>Uke 41</span></a>
+          <a href="#14-okt" data-week="42"><span class="timeline-node"></span><span>Uke 42</span></a>
+          <a href="#21-okt" data-week="43"><span class="timeline-node"></span><span>Uke 43</span></a>
+          <a href="#28-okt" data-week="44"><span class="timeline-node"></span><span>Uke 44</span></a>
+        </nav>
+
         <div class="dagbok-scroll">
           <div class="diary-week" data-week="34">
             <h3 class="week-header">Uke 34 · 19.–20. august</h3>
@@ -306,19 +320,6 @@
           </div>
         </div>
 
-        <nav class="diary-timeline" aria-label="Dagboksmåneder">
-          <a href="#19-aug" data-week="34"><span class="timeline-node"></span><span>Uke 34</span></a>
-          <a href="#26-aug" data-week="35"><span class="timeline-node"></span><span>Uke 35</span></a>
-          <a href="#2-sep" data-week="36"><span class="timeline-node"></span><span>Uke 36</span></a>
-          <a href="#9-sep" data-week="37"><span class="timeline-node"></span><span>Uke 37</span></a>
-          <a href="#16-sep" data-week="38"><span class="timeline-node"></span><span>Uke 38</span></a>
-          <a href="#23-sep" data-week="39"><span class="timeline-node"></span><span>Uke 39</span></a>
-          <a href="#30-sep" data-week="40"><span class="timeline-node"></span><span>Uke 40</span></a>
-          <a href="#7-okt" data-week="41"><span class="timeline-node"></span><span>Uke 41</span></a>
-          <a href="#14-okt" data-week="42"><span class="timeline-node"></span><span>Uke 42</span></a>
-          <a href="#21-okt" data-week="43"><span class="timeline-node"></span><span>Uke 43</span></a>
-          <a href="#28-okt" data-week="44"><span class="timeline-node"></span><span>Uke 44</span></a>
-        </nav>
       </div>
     </section>
 
@@ -377,12 +378,11 @@
       ? [...diaryScroller.querySelectorAll("section[id]")]
       : [];
     const diaryBookmarks = [...document.querySelectorAll(".diary-timeline a")];
-    const diaryTimeline = document.querySelector(".diary-timeline");
     let selectedDiaryEntryId = null;
 
     function syncDiaryHeight() {
-      if (!diaryScroller || !diaryTimeline) return;
-      diaryScroller.style.maxHeight = diaryTimeline.scrollHeight + "px";
+      if (!diaryScroller) return;
+      diaryScroller.style.maxHeight = "";
     }
 
     function setActiveDiaryBookmark(entryId) {
