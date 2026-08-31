@@ -299,7 +299,7 @@ h2 {
 }
 
 .week-header {
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
   color: var(--phonero-red);
   font-size: 0.9rem;
   letter-spacing: 0.04em;
@@ -309,18 +309,17 @@ h2 {
 .diary-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 14px;
+  gap: 8px;
   align-items: start;
 }
 
 .diary-timeline {
   position: relative;
-  order: -1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
   gap: 14px 8px;
   align-self: stretch;
-  padding: 0 0 4px;
+  padding: 0 0 2px;
 }
 
 .diary-timeline::before {
