@@ -377,12 +377,11 @@
       ? [...diaryScroller.querySelectorAll("section[id]")]
       : [];
     const diaryBookmarks = [...document.querySelectorAll(".diary-timeline a")];
-    const diaryTimeline = document.querySelector(".diary-timeline");
     let selectedDiaryEntryId = null;
 
     function syncDiaryHeight() {
-      if (!diaryScroller || !diaryTimeline) return;
-      diaryScroller.style.maxHeight = diaryTimeline.scrollHeight + "px";
+      if (!diaryScroller) return;
+      diaryScroller.style.maxHeight = "";
     }
 
     function setActiveDiaryBookmark(entryId) {
