@@ -3,6 +3,11 @@
   --text: #0f172a;
   --muted: #475569;
   --card: #ffffff;
+  --person-card-bg: #fbfdff;
+  --heading: #0b1f55;
+  --tag-text: #274162;
+  --open-profile: #35527b;
+  --timeline-line: #cbd5e1;
   --brand: #1f3c88;
   --brand-dark: #163172;
   --phonero-red: #e30613;
@@ -25,6 +30,22 @@ body {
   line-height: 1.55;
   background: var(--bg);
   color: var(--text);
+}
+
+body.dark-mode {
+  --bg: #0b1120;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card: #111827;
+  --person-card-bg: #172338;
+  --heading: #dbeafe;
+  --tag-text: #cbd5e1;
+  --open-profile: #cbd5e1;
+  --timeline-line: #475569;
+  --brand: #60a5fa;
+  --brand-dark: #93c5fd;
+  --chip: #1e293b;
+  --border: #334155;
 }
 
 .site-nav {
@@ -112,7 +133,7 @@ h2 {
 }
 
 .person-card {
-  background: #fbfdff;
+  background: var(--person-card-bg);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 18px;
@@ -135,7 +156,7 @@ h2 {
 
 .person-card h3 {
   margin: 0 0 4px;
-  color: #0b1f55;
+  color: var(--heading);
 }
 
 .person-card p {
@@ -175,7 +196,7 @@ h2 {
 .tags span {
   text-align: center;
   background: var(--chip);
-  color: #274162;
+  color: var(--tag-text);
   border-radius: 999px;
   padding: 6px 12px;
   font-size: 0.9rem;
@@ -192,7 +213,7 @@ h2 {
 .open-profile {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #35527b;
+  color: var(--open-profile);
 }
 
 .linkedin-link {
@@ -331,7 +352,31 @@ h2 {
   left: 10px;
   width: auto;
   height: 2px;
-  background: #cbd5e1;
+  background: var(--timeline-line);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 60;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  filter: brightness(0.95);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #8db2ff;
+  outline-offset: 2px;
 }
 
 .diary-timeline a {
