@@ -1,53 +1,510 @@
-<section id="status-1" class="section-card snap-panel">
-    <h2>Status 1</h2>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosjektside</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="theme-toggle.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a class="navbar-brand" href="https://www.phonero.no/" asp-area="" asp-page="/index">
+        <img src="https://acp-media.bluestonepim.com/21883154-aa87-446a-b5ba-2f759250fe6c/d3779748-739b-4de1-91a6-8e63db6982a5/OGtW5rUar8pJX5nXdZABAEg6B/qDwZ5AjC0JeUbPUEnwP3nvw4U.png?w=230&f=webp"
+             alt="Phonero Logo"
+             height="40"
+             class="d-inline-block align-top" />
+    </a>
+    <a href="#hjem" class="nav-link">Hjem</a>
+    <a href="#om-oss" class="nav-link">Om Oss</a>
+    <a href="#oppgavebeskrivelse" class="nav-link">Oppgavebeskrivelse</a>
+    <a href="#status-1" class="nav-link">Status 1</a>
+    <a href="#status-2" class="nav-link">Status 2</a>
+    <a href="#dagbok" class="nav-link">Dagbok</a>
+    <a href="#refleksjon" class="nav-link">Refleksjon</a>
+  </nav>
 
-    <div class="status-layout">
+  <main class="container">
+    <section id="hjem" class="section-card snap-panel">
+      <h2>Hjem</h2>
+      <p>Vi har fått praksisplass hos Phonero, spesifikt på Bot Teamet.
+        Vi skal samarbeide med Marius og Harris for å gjøre chatbotten Phonelia til en bedre chatbot. <br /> Samtidig som vi skal implimentere Ansattkjøp i chatboten slik at den kan gjøre endringer for ansatte i bedriften.  </p>
+    </section>
 
-        <!-- Venstre side: tekst -->
+    <section id="om-oss" class="section-card snap-panel">
+      <h2>Om Oss</h2>
+      <p>Gruppe på to studenter som har samarbeidet godt gjennom semesteret.</p>
+      <p>Vi er initiativrike, samarbeidsvillige og klare for nye utfordringer.</p>
+      <p>Trykk på profilene for video og prosjekter!</p>
+      <p><br>For videre samarbeid ta kontakt med:<br> Arild Bjørnetrø tlf: 99545528 eller arild_bjornetro@hotmail.com</p>
+
+
+      <div class="person-grid">
+        <article class="person-card person-card-clickable" data-href="arild.html" tabindex="0" role="link" aria-label="Ga til Arild-profil">
+            <img src="images/arild-profilbilde.png" alt="Arild Bjørnetrø" class="profile-photo">
+            <h3>Arild Bjørnetrø</h3>
+            <p class="role">Student - IT og informasjonssystemer</p>
+<p>
+                37 år, kommer fra Fredrikstad og bor i Arendal med samboer og en sønn på 1 år+.<br>
+                Jeg har tidligere jobbet som blant annet Kokk og Fengselsbetjent og i Akuttpsykiatrien på AHUS og Ullevål. Min erfaring med å jobbe med mennesker i en krevende situasjon kommer godt med i et hektisk arbeidsmiljø.<br>
+                Jeg anser meg selv som flittig, effektiv, ambisiøs, nysgjerrig og lærevillig.<br>
+</p>
+
+<p>
+                På fritiden liker jeg toppturer, trening, dykking/fridykking og gaming.
+                Jeg jobber også med å utvikle en app for førstegangsforeldre som samler nyttig informasjon og utstyrs anbefalinger for hva man bør kjøpe inn til babyen for en enklere hverdag.
+            <div class="tags">
+              <span>Python</span>
+              <span>C#</span>
+              <span>JavaScript</span>
+              <span>Front-end</span>
+              <span>Back-end</span>
+              <span>Webutvikling</span>
+            </div>
+            <div class="social-links">
+              <span class="open-profile">Åpne profilside</span>
+              <a
+                href="https://www.linkedin.com/in/arild-bjørnetrø-a94b39323"
+                class="linkedin-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Besok Arild sin LinkedIn-profil"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19ZM8.34 10.16H5.66V18H8.34V10.16ZM7 6A1.56 1.56 0 1 0 7 9.12A1.56 1.56 0 1 0 7 6ZM18.35 13.78C18.35 11.39 17.08 9.94 14.95 9.94C13.92 9.94 13.18 10.5 12.89 11.04H12.86V10.16H10.29V18H12.97V14.12C12.97 13.09 13.17 12.1 14.44 12.1C15.69 12.1 15.71 13.27 15.71 14.18V18H18.39L18.35 13.78Z"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        <article class="person-card person-card-clickable" data-href="jonas.html" tabindex="0" role="link" aria-label="Ga til Jonas-profil">
+          <img src="images/Jonas-Profilbilde.jpg" alt="Jonas Bendal" class="profile-photo">
+          <h3>Jonas Bendal</h3>
+          <p class="role">Student - IT og informasjonssystemer</p>
+          <p>
+              Jeg heter Jonas og er 31 år. Kommer fra Trondheim og er bosatt i Kristiansand. Frem til August er jeg på utveksling i Japan, som er veldig stas!<br>
+              Har tidligere erfaring som tømrer-lærling, selger i klesbutikk og låseansvarlig i dagligvare. Jeg har også lært viktigheten av god kommunikasjon for å finne løsninger som dekker kundenes behov.<br>
+              Jeg anser meg selv som omtenksom, nysgjerrig, lærevillig, og ydmyk. Trives med samarbeid, problemløsning, faglige diskusjoner og er alltid åpen for tilbakemeldinger.<br>
+              Bruker fritiden min på basket, trening, spill og skjønnliteratur. 
+          </p>
+          <div class="tags">
+            <span>C#</span>
+            <span>Python</span>
+            <span>Back-end</span>
+            <span>ASP.NET</span>
+            <span>MariaDB</span>
+          </div>
+          <div class="social-links">
+            <span class="open-profile">Apne profilside</span>
+            <a
+              href="https://www.linkedin.com/in/jonas-bendal-0014283a9/"
+              class="linkedin-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Besok Jonas sin LinkedIn-profil"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19ZM8.34 10.16H5.66V18H8.34V10.16ZM7 6A1.56 1.56 0 1 0 7 9.12A1.56 1.56 0 1 0 7 6ZM18.35 13.78C18.35 11.39 17.08 9.94 14.95 9.94C13.92 9.94 13.18 10.5 12.89 11.04H12.86V10.16H10.29V18H12.97V14.12C12.97 13.09 13.17 12.1 14.44 12.1C15.69 12.1 15.71 13.27 15.71 14.18V18H18.39L18.35 13.78Z"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+      </div>
+    </section>
+
+    <section id="oppgavebeskrivelse" class="section-card snap-panel">
+      <h2>Oppgavebeskrivelse</h2>
+      <p>
+          Vi har fått praksisplass hos Phonero, spesifikt på Bot Teamet.
+          Her skal vi gjøre Chatbotten Phonelia smartere og samtidig skal vi utforske tillegsfunksjoner for ansatte med funksjonen Ansattkjøp,
+          hvor ansatte i bedriften kan legge inn kjøp av tjenester som arbeidsgiver ikke skal belastes.
+          Som f.eks ekstra datasim, data i utlandet og ulike andre tillegstjenester Phonero tilbyr.
+      </p>
+    </section>
+
+    <section id="status-1" class="section-card snap-panel">
+      <h2>Status 1</h2>
+
+      <div class="status-layout">
         <div class="status-text">
-            <h3>Om Phonero</h3>
-
-            <p>
-                Phonero er et telekommunikasjonsselskap og ble etablert i 2008.
-                Phonero ble i 2016 kjøpt opp av Telia og ligger nå som et
-                datterselskap som styrker Telias posisjon i det norske
-                bedriftsmarkedet på telefoni.
-            </p>
-
-            <p>
-                Phonero avd. Kristiansand hadde ifølge Proff.no en omsetning
-                på ca. 141 millioner kroner i 2025. I tillegg omsatte
-                datterselskapet Phonero Distribusjon AS for 5,6 millioner kroner.
-            </p>
-
-            <p>
-                Phonero har ca. 160 ansatte og ca. 200 eksterne selgere og
-                agenter som jobber for bedriften. De leverer skreddersydde,
-                kostnadsreduserende og brukervennlige telefoniløsninger med
-                rask og personlig kundeservice til over 30 000 bedrifter.
-                De har hovedkontoret i Kristiansand og salgsavdelinger i
-                Oslo, Stavanger, Bergen og Trondheim.
-            </p>
+          <h3>Om Phonero</h3>
+          <p>
+            Phonero er et telekommunikasjonsselskap og ble etablert i 2008.
+            Phonero ble i 2016 kjøpt opp av Telia og ligger nå som et datterselskap
+            som styrker Telias posisjon i det norske bedriftsmarkedet på telefoni.
+          </p>
+          <p>
+            Phonero avd. Kristiansand hadde ifølge Proff.no en omsetning på ca.
+            141 millioner kroner i 2025. I tillegg omsatte datterselskapet
+            Phonero Distribusjon AS for 5,6 millioner kroner.
+          </p>
+          <p>
+            Phonero har ca. 160 ansatte og ca. 200 eksterne selgere og agenter
+            som jobber for bedriften. De leverer skreddersydde, kostnadsreduserende
+            og brukervennlige telefoniløsninger med rask og personlig kundeservice
+            til over 30 000 bedrifter. De har hovedkontoret i Kristiansand og
+            salgsavdelinger i Oslo, Stavanger, Bergen og Trondheim.
+          </p>
         </div>
 
-        <!-- Høyre side: bilder -->
         <div class="status-images">
-
-            <figure>
-                <img
-                    src="https://cdn.prod.website-files.com/60b9da5f05223f7e7dad4281/65c394cdd5c75c71bcde9867_Skjermbilde%202024-02-07%20kl.%2015.33.36.png"
-                    loading="lazy"
-                    alt="Informasjon om Phonero">
-            </figure>
-
-            <figure>
-                <img
-                    src="https://cdn.prod.website-files.com/60b9da5f05223f7e7dad4281/65c3945f55a5ff24f0cffb9d_Skjermbilde%202024-02-07%20kl.%2015.28.36.png"
-                    loading="lazy"
-                    alt="Phonero kundetilfredshet">
-            </figure>
-
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/60b9da5f05223f7e7dad4281/65c394cdd5c75c71bcde9867_Skjermbilde%202024-02-07%20kl.%2015.33.36.png"
+              loading="lazy"
+              alt="Informasjon om Phonero">
+          </figure>
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/60b9da5f05223f7e7dad4281/65c3945f55a5ff24f0cffb9d_Skjermbilde%202024-02-07%20kl.%2015.28.36.png"
+              loading="lazy"
+              alt="Phonero kundetilfredshet">
+          </figure>
         </div>
+      </div>
 
-    </div>
-</section>
+      <h3>Våre arbeidsoppgaver</h3>
+      <p>
+        Vår oppgave er å utvikle en betaversjon av Phonelia, kundeserviceboten, tilpasset Phoneros tjenester for ansattkjøp. Dette innebærer blant annet å sette opp use cases, som er definerte flytdiagrammer boten skal følge i ulike situasjoner, for hver av tjenestene.
+        Kompleksiteten varierer mellom de ulike use casene. Noen består av enkle flytdiagrammer som kun formidler informasjon til kunden, mens andre er mer komplekse og krever API-kall, datahåndtering og behandling av informasjon for å kunne utføre nødvendige handlinger.
+      </p>
+
+      <h3>Vår erfaring</h3>
+      <p>
+        Vi har fått en innføring i hvordan Phonelia fungerer, og vi har fått tilgang til systemene som brukes for å utvikle og administrere boten. Dette har gitt oss en god forståelse av hvordan vi kan implementere use cases og segmenter.
+        Vi har også fått opplæring i GraphQL, som er et verktøy for å hente informasjon fra databasen som boten benytter. Dette har vært nyttig for å kunne hente nødvendig informasjon om brukere og tjenester.
+      </p>
+
+      <h3>Utfordringer</h3>
+      <p>
+        Vi har støtt på noen utfordringer underveis...
+      </p>
+    </section>
+
+    <section id="status-2" class="section-card snap-panel">
+      <h2>Status 2</h2>
+      <p>
+        Dette er status 2.
+      </p>
+    </section>
+
+    <section id="dagbok" class="section-card snap-panel">
+      <h2>Dagbok</h2>
+      
+      <div class="diary-layout">
+        <nav class="diary-timeline" aria-label="Dagboksmåneder">
+          <a href="#19-aug" data-week="34"><span class="timeline-node"></span><span>Uke 34</span></a>
+          <a href="#26-aug" data-week="35"><span class="timeline-node"></span><span>Uke 35</span></a>
+          <a href="#2-sep" data-week="36"><span class="timeline-node"></span><span>Uke 36</span></a>
+          <a href="#9-sep" data-week="37"><span class="timeline-node"></span><span>Uke 37</span></a>
+          <a href="#16-sep" data-week="38"><span class="timeline-node"></span><span>Uke 38</span></a>
+          <a href="#23-sep" data-week="39"><span class="timeline-node"></span><span>Uke 39</span></a>
+          <a href="#30-sep" data-week="40"><span class="timeline-node"></span><span>Uke 40</span></a>
+          <a href="#7-okt" data-week="41"><span class="timeline-node"></span><span>Uke 41</span></a>
+          <a href="#14-okt" data-week="42"><span class="timeline-node"></span><span>Uke 42</span></a>
+          <a href="#21-okt" data-week="43"><span class="timeline-node"></span><span>Uke 43</span></a>
+          <a href="#28-okt" data-week="44"><span class="timeline-node"></span><span>Uke 44</span></a>
+        </nav>
+
+        <div class="dagbok-scroll">
+          <div class="diary-week" data-week="34">
+            <h3 class="week-header">Uke 34 · 19.–20. august</h3>
+            <section id="19-aug" data-week="34">
+              <h3>Onsdag 19. August 2026</h3>
+              <p>
+                Første dag i Phonero Bot-teamet<br>
+                Vi møtte opp hos Phonero kl. 10.00 og ble godt tatt imot av Kristian, Marius, Harris og Erik. Dagen ble hovedsakelig brukt til å bli kjent med arbeidsplassen og sette opp nødvendig utstyr og tilganger.
+                Vi fikk utdelt egne jobb-PC-er og hjelp til å sette opp Telia-brukere, installere nødvendige programmer og verifisere tilganger til ulike systemer. Vi fikk også en omvisning på kontoret og ordnet skapplass.
+                I løpet av dagen spiste vi lunsj sammen med de andre praksisstudentene og ansatte, noe som ga oss muligheten til å bli bedre kjent med teamet. Før vi dro, avtalte vi når vi skulle møte opp neste dag.
+              </p>
+            </section>
+
+            <section id="20-aug" data-week="34">
+              <h3>Torsdag 20. August 2026</h3>
+              <p>
+                Andre dag i Phonero Bot-teamet<br>
+                Vi fortsatte med å sette opp nødvendige programmer, verktøy og tilganger, samtidig som vi ble bedre kjent med systemene vi skal bruke i praksisperioden.
+                Marius, KI-ansvarlig, viste oss hvordan Phonelia, Phoneros kundeservicebot, fungerer. Vi fikk også en gjennomgang av prosjektoppgaven vår, som er å implementere use cases og segmenter for «ansattkjøp».
+              Vi fikk en introduksjon til GraphQL, som brukes til å hente informasjon fra databasen chatboten benytter. Det er mange nye systemer å lære, men det virker både interessant og utfordrende.
+              Neste gang: Bli bedre kjent med systemene og lage en plan for prosjektet.
+              </p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="35">
+            <h3 class="week-header">Uke 35 · 26.–27. august</h3>
+            <section id="26-aug" data-week="35">
+              <h3>Onsdag 26. August 2026</h3>
+              <p>
+                Vår første “ordentlige” dag hos Phonero! Vi brukte litt tid på å få siste oppsett av tilganger til å fungere.
+                Fra kl. 11 startet vi først med å utforske verktøyet (Zendesk) for å lære litt om hvordan det brukes. Deretter skulle vi lage en enkel “procedure” (instrukser for chatboten i et gitt scenario) hvor kunden spør om hvor mye data som er brukt på mobilabonnementet.
+              </p>
+            </section>
+
+            <section id="27-aug" data-week="35">
+              <h3>Torsdag 27. August 2026</h3>
+              <p>
+                Vi startet dagen med å diskutere hvilke oppgaver som måtte gjøres. Planen var først å lage en procedure for hver enkelt tilleggstjeneste innenfor ansattkjøp, samtidig som vi skulle bli bedre kjent med begreper som procedures, actions, templates og lignende.
+              </p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="36">
+            <h3 class="week-header">Uke 36 · 2.–3. september</h3>
+            <section id="2-sep" data-week="36">
+              <h3>Onsdag 2. September 2026</h3>
+              <p>
+                Vi brukte dagen på å få en bedre forståelse av hvordan systemet henger sammen. Dette innebar blant annet å søke gjennom samtalelogger for å identifisere tilfeller der boten returnerte fallbacks (feil). Dette ga oss bedre innsikt i systemet og en tydeligere retning videre i arbeidet. 
+              </p>
+            </section>
+
+            <section id="3-sep" data-week="36">
+              <h3>Torsdag 3. September 2026</h3>
+              <p>
+                Vi fortsatte med å feilsøke med chattbotten for å få den til å kunne gjennomføre Ansattkjøp. Det ble oppdaget at brukeren som ble opprettet for oss manglet infomrasjon om postnummer, da dette ble lagt til klarte chatbotten å hente inn den informasjonen den i utgangspunktet trengte om brukeren. Klokken var mye og vi fikk ikke testet ut dette noe mer. Vi gleder oss til neste arbeidsdag hvor vi kan forhåpentligvis komme oss litt videre i prosessen!
+              </p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="37">
+            <h3 class="week-header">Uke 37 · 9.–10. september</h3>
+            <section id="9-sep" data-week="37">
+              <h3>Onsdag 9. September 2026</h3>
+              <p>Vi har utforsket hvordan vi kan sette opp API-integrasjoner og spørringer som senere kan brukes til å hente nødvendig informasjon og parametere som boten trenger for å utføre ulike handlinger. I etterkant har vi også diskutert om vi bør refaktorere deler av strukturen rundt procedures som allerede er laget, og vurdert om fordelene ved en endring vil veie opp for ulempene. Før dagen var over viste det seg at forandringene ga flere feil som må ordnes opp i senere.
+              </p>
+            </section>
+
+            <section id="10-sep" data-week="37">
+              <h3>Torsdag 10. September 2026</h3>
+              <p>Vi fortsetter å jobbe med ansattkjøp for å prøve å implimentere dette i Phonelia. Vi støter på utfordringer med at profilene våre tilsynelatende ikke er satt opp helt som en reel kunde. Vi prøvde å få til en løsning hvor vi kan gjennomføre kjøp via vipps på en dev vipps bruker via Phonero, men den fungerte kun i dev-miljøet, vi kommuniserer med botten i Sandbox miljø og "ekte" miljø, da virker ikke den vipps brukeren. Vi kan få refundert kjøp vi gjør selv, men dette skaper merarbeid for Phonero, så vi ser på andre løsninger. Det er spennende å jobbe med å videreutvikle chatbotten og vi ser frem til å jobbe videre ut semesteret!
+              </p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="38">
+            <h3 class="week-header">Uke 38 · 16.–17. september</h3>
+            <section id="16-sep" data-week="38">
+              <h3>Onsdag 16. September 2026</h3>
+              <p>UIA har annonsert biletter til messen TECHPOINT i Kristiansand. Jeg og Jonas har fått billetter så vi reiser på messen istedenfor å jobbe hos Phonero. Vi håper på å utvide nettverket litt på messen og satser på mange spennende foredrag iløpet av dagen!</p>
+            </section>
+
+            <section id="17-sep" data-week="38">
+              <h3>Torsdag 17. September 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="39">
+            <h3 class="week-header">Uke 39 · 23.–24. september</h3>
+            <section id="23-sep" data-week="39">
+              <h3>Onsdag 23. September 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+            <section id="24-sep" data-week="39">
+              <h3>Torsdag 24. September 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="40">
+            <h3 class="week-header">Uke 40 · 30. september–1. oktober</h3>
+            <section id="30-sep" data-week="40">
+              <h3>Onsdag 30. September 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+            <section id="1-okt" data-week="40">
+              <h3>Torsdag 1. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="41">
+            <h3 class="week-header">Uke 41 · 7.–8. oktober</h3>
+            <section id="7-okt" data-week="41">
+              <h3>Onsdag 7. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+            <section id="8-okt" data-week="41">
+              <h3>Torsdag 8. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="42">
+            <h3 class="week-header">Uke 42 · 14.–15. oktober</h3>
+            <section id="14-okt" data-week="42">
+              <h3>Onsdag 14. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+            <section id="15-okt" data-week="42">
+              <h3>Torsdag 15. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="43">
+            <h3 class="week-header">Uke 43 · 21.–22. oktober</h3>
+            <section id="21-okt" data-week="43">
+              <h3>Onsdag 21. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+            <section id="22-okt" data-week="43">
+              <h3>Torsdag 22. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+          </div>
+
+          <div class="diary-week" data-week="44">
+            <h3 class="week-header">Uke 44 · 28.–29. oktober</h3>
+            <section id="28-okt" data-week="44">
+              <h3>Onsdag 28. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+            <section id="29-okt" data-week="44">
+              <h3>Torsdag 29. Oktober 2026</h3>
+              <p>Spennende ting blir skrevet her senere!</p>
+            </section>
+
+      </div>
+    </section>
+
+    <section id="refleksjon" class="section-card snap-panel">
+      <h2>Refleksjon</h2>
+      <p>
+        tekst
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const navLinks = [...document.querySelectorAll(".nav-link")];
+    const sections = [...document.querySelectorAll(".section-card.snap-panel[id]")];
+    const nav = document.querySelector(".site-nav");
+
+    function setActiveNav(sectionId) {
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === "#" + sectionId;
+        link.classList.toggle("active", isActive);
+      });
+    }
+
+    function updateActiveSection() {
+      const navHeight = nav ? nav.offsetHeight : 0;
+      const anchorLine = navHeight + 24;
+      let activeId = sections[0]?.id || "hjem";
+
+      sections.forEach((section) => {
+        const top = section.getBoundingClientRect().top;
+        if (top <= anchorLine) {
+          activeId = section.id;
+        }
+      });
+
+    let ticking = false;
+    function requestUpdate() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    updateActiveSection();
+
+    const diaryScroller = document.querySelector(".dagbok-scroll");
+    const diaryEntries = diaryScroller
+      ? [...diaryScroller.querySelectorAll("section[id]")]
+      : [];
+    const diaryBookmarks = [...document.querySelectorAll(".diary-timeline a")];
+    let selectedDiaryEntryId = null;
+
+    function syncDiaryHeight() {
+      if (!diaryScroller) return;
+      diaryScroller.style.maxHeight = "";
+    }
+
+    function setActiveDiaryBookmark(entryId) {
+      const activeWeek = document.getElementById(entryId)?.dataset.week;
+      diaryBookmarks.forEach((bookmark) => {
+        bookmark.classList.toggle("is-active", bookmark.dataset.week === activeWeek);
+      });
+    }
+
+    function updateDiaryBookmark() {
+      if (!diaryScroller || diaryEntries.length === 0) return;
+
+      if (selectedDiaryEntryId) {
+        setActiveDiaryBookmark(selectedDiaryEntryId);
+        return;
+      }
+
+      const activeLine = diaryScroller.getBoundingClientRect().top + 110;
+      let activeEntry = diaryEntries[0];
+      diaryEntries.forEach((entry) => {
+        if (entry.getBoundingClientRect().top <= activeLine) activeEntry = entry;
+      });
+      setActiveDiaryBookmark(activeEntry.id);
+    }
+
+    diaryBookmarks.forEach((bookmark) => {
+      bookmark.addEventListener("click", (event) => {
+        event.preventDefault();
+        const entryId = bookmark.getAttribute("href").slice(1);
+        const entry = document.getElementById(entryId);
+        if (!diaryScroller || !entry) return;
+
+        selectedDiaryEntryId = entryId;
+        setActiveDiaryBookmark(entryId);
+        const entryTop = entry.getBoundingClientRect().top;
+        const diaryTop = diaryScroller.getBoundingClientRect().top;
+        diaryScroller.scrollTo({
+          top: Math.max(0, diaryScroller.scrollTop + entryTop - diaryTop - 72),
+          behavior: "smooth"
+        });
+        history.replaceState(null, "", "#" + entryId);
+      });
+    });
+
+    if (diaryScroller) {
+      diaryScroller.addEventListener("scroll", updateDiaryBookmark, { passive: true });
+      diaryScroller.addEventListener("wheel", () => {
+        selectedDiaryEntryId = null;
+        updateDiaryBookmark();
+      }, { passive: true });
+      diaryScroller.addEventListener("touchstart", () => {
+        selectedDiaryEntryId = null;
+        updateDiaryBookmark();
+      }, { passive: true });
+      window.addEventListener("resize", syncDiaryHeight);
+      syncDiaryHeight();
+      updateDiaryBookmark();
+    }
+
+    const personCards = [...document.querySelectorAll(".person-card-clickable")];
+    personCards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a")) return;
+        const href = card.dataset.href;
+        if (href) window.location.href = href;
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        const href = card.dataset.href;
+        if (href) window.location.href = href;
+      });
+    });
+  </script>
+</body>
+</html>
