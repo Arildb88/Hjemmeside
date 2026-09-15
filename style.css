@@ -91,10 +91,10 @@ body.dark-mode {
 }
 
 .container {
-  width: min(1100px, calc(100% - 32px));
-  margin: 28px auto 40px;
-  display: grid;
-  gap: 14px;
+    width: min(1300px, calc(100% - 32px));
+    margin: 28px auto 40px;
+    display: grid;
+    gap: 14px;
 }
 
 .section-card {
@@ -121,14 +121,6 @@ h2 {
   margin: 0;
   color: var(--muted);
   max-width: 72ch;
-}
-
-#status-1 figure img {
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin: 0 auto;
 }
 
 .person-grid {
@@ -432,41 +424,71 @@ h2 {
   background: var(--phonero-red);
   box-shadow: 0 0 0 2px var(--phonero-red);
 }
+/* ===== STATUS 1 ===== */
+
 .status-layout {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: minmax(0, 1.2fr) minmax(350px, 1fr);
     gap: 40px;
     align-items: center;
+    width: 100%;
 }
 
 .status-text {
     min-width: 0;
 }
 
+.status-text h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Overstyrer .section-card p */
+.status-text p {
+    max-width: none;
+    margin: 0 0 18px;
+}
+
+.status-text p:last-child {
+    margin-bottom: 0;
+}
+
 .status-images {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    gap: 24px;
+    min-width: 0;
 }
 
 .status-images figure {
     margin: 0;
+    width: 100%;
 }
 
 .status-images img {
     display: block;
     width: 100%;
+    max-width: none;
     height: auto;
+    margin: 0;
     border-radius: 8px;
 }
 
-/* Mobil */
+
+/* ===== STATUS 1 - MOBIL ===== */
+
 @media (max-width: 800px) {
+
     .status-layout {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .status-images {
+        margin-top: 10px;
     }
 }
-
 @media (max-width: 600px) {
   .diary-timeline {
     grid-template-columns: repeat(3, 1fr);
