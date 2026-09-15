@@ -123,6 +123,14 @@ h2 {
   max-width: 72ch;
 }
 
+#status-1 figure img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+}
+
 .person-grid {
   margin-top: 18px;
   display: grid;
