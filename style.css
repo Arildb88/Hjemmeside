@@ -433,4 +433,20 @@ h2 {
   .diary-timeline a {
     font-size: 0.75rem;
   }
+
+.section-card figure {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.section-card figure img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+  
+
+  
 }
