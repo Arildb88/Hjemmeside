@@ -796,18 +796,22 @@
 
 
           /*
-           * Toppen av Dagbok er nådd.
-           * Slipp brukeren videre oppover.
-           */
-          if (
-            scrollingUp &&
-            atTop
-          ) {
+ * Toppen av Dagbok er nådd.
+ * Slipp brukeren videre oppover på hovedsiden.
+ */
+if (
+  scrollingUp &&
+  atTop
+) {
+  diaryMode = "passed-up";
 
-            diaryMode = "passed-up";
+  window.scrollBy({
+    top: event.deltaY,
+    behavior: "auto"
+  });
 
-            return;
-          }
+  return;
+}
         }
 
 
