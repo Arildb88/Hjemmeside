@@ -425,13 +425,13 @@ h2 {
   box-shadow: 0 0 0 2px var(--phonero-red);
 }
 /* ===== STATUS 1 ===== */
-
 .status-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(350px, 1fr);
+    grid-template-columns: minmax(0, 1fr) 400px;
     gap: 40px;
-    align-items: center;
+    align-items: start;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .status-text {
@@ -443,7 +443,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Overstyrer .section-card p */
 .status-text p {
     max-width: none;
     margin: 0 0 18px;
@@ -455,14 +454,16 @@ h2 {
 
 .status-image {
     margin: 0;
+    width: 100%;
+    min-width: 0;
     display: flex;
     justify-content: center;
 }
 
 .status-image img {
     display: block;
-    width: 80%;
-    max-width: 550px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
@@ -476,34 +477,17 @@ h2 {
     .status-layout {
         grid-template-columns: 1fr;
         gap: 24px;
+        margin-bottom: 40px;
     }
 
-    .status-images {
-        margin-top: 10px;
+    .status-image img {
+        width: 100%;
+        max-width: 400px;
     }
 }
-@media (max-width: 600px) {
-  .diary-timeline {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
-  .diary-timeline a {
-    font-size: 0.75rem;
-  }
 
-.section-card figure {
-    width: 100%;
-    margin: 20px 0;
-}
-
-.section-card figure img {
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
   
 
   
-}
+
