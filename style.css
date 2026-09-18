@@ -22,7 +22,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 82px;
-  scroll-snap-type: y proximity;
 }
 
 
@@ -299,11 +298,6 @@ h2 {
 .hero-content {
     text-align: center;
     padding: 60px 20px;
-}
-
-#dagbok {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 .dagbok-scroll {
