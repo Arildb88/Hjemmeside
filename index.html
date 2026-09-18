@@ -416,228 +416,471 @@
   </main>
 
   <script>
-    const navLinks = [...document.querySelectorAll(".nav-link")];
-    const sections = [...document.querySelectorAll(".section-card.snap-panel[id]")];
-    const nav = document.querySelector(".site-nav");
+  const navLinks = [...document.querySelectorAll(".nav-link")];
+  const sections = [...document.querySelectorAll(".section-card.snap-panel[id]")];
+  const nav = document.querySelector(".site-nav");
 
-    function setActiveNav(sectionId) {
-      navLinks.forEach((link) => {
-        const isActive = link.getAttribute("href") === "#" + sectionId;
-        link.classList.toggle("active", isActive);
-      });
-    }
+  function setActiveNav(sectionId) {
+    navLinks.forEach((link) => {
+      const isActive = link.getAttribute("href") === "#" + sectionId;
+      link.classList.toggle("active", isActive);
+    });
+  }
 
-    function updateActiveSection() {
-      const navHeight = nav ? nav.offsetHeight : 0;
-      const anchorLine = navHeight + 24;
-      let activeId = sections[0]?.id || "hjem";
+  function updateActiveSection() {
+    const navHeight = nav ? nav.offsetHeight : 0;
+    const anchorLine = navHeight + 24;
+    let activeId = sections[0]?.id || "hjem";
 
-      sections.forEach((section) => {
-        const top = section.getBoundingClientRect().top;
-        if (top <= anchorLine) {
-          activeId = section.id;
-        }
-      });
-        setActiveNav(activeId);
-}
+    sections.forEach((section) => {
+      const top = section.getBoundingClientRect().top;
 
-    let ticking = false;
-    function requestUpdate() {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateActiveSection();
-          ticking = false;
-        });
-        ticking = true;
+      if (top <= anchorLine) {
+        activeId = section.id;
       }
-    }
+    });
 
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-    updateActiveSection();
+    setActiveNav(activeId);
+  }
 
-    const diaryScroller = document.querySelector(".dagbok-scroll");
-    const diaryEntries = diaryScroller
-      ? [...diaryScroller.querySelectorAll("section[id]")]
-      : [];
-    const diaryBookmarks = [...document.querySelectorAll(".diary-timeline a")];
-    let selectedDiaryEntryId = null;
+  let ticking = false;
 
-    function syncDiaryHeight() {
-      if (!diaryScroller) return;
-      diaryScroller.style.maxHeight = "";
-    }
-
-    function setActiveDiaryBookmark(entryId) {
-      const activeWeek = document.getElementById(entryId)?.dataset.week;
-      diaryBookmarks.forEach((bookmark) => {
-        bookmark.classList.toggle("is-active", bookmark.dataset.week === activeWeek);
+  function requestUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveSection();
+        ticking = false;
       });
+
+      ticking = true;
     }
+  }
 
-function updateDiaryBookmark() {
-  if (!diaryScroller || diaryEntries.length === 0) return;
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 
-  const scrollerTop = diaryScroller.getBoundingClientRect().top;
-  const activeLine = scrollerTop + 80;
+  updateActiveSection();
 
-  let activeEntry = diaryEntries[0];
 
-  diaryEntries.forEach((entry) => {
-    const entryTop = entry.getBoundingClientRect().top;
+  /* =========================
+     DAGBOK
+     ========================= */
 
-    if (entryTop <= activeLine) {
-      activeEntry = entry;
-    }
-  });
+  const diaryScroller = document.querySelector(".dagbok-scroll");
 
-  setActiveDiaryBookmark(activeEntry.id);
-}
+  const diaryEntries = diaryScroller
+    ? [...diaryScroller.querySelectorAll("section[id]")]
+    : [];
+
+  const diaryBookmarks = [
+    ...document.querySelectorAll(".diary-timeline a")
+  ];
+
+  let selectedDiaryEntryId = null;
+
+
+  function syncDiaryHeight() {
+    if (!diaryScroller) return;
+
+    diaryScroller.style.maxHeight = "";
+  }
+
+
+  function setActiveDiaryBookmark(entryId) {
+    const activeWeek =
+      document.getElementById(entryId)?.dataset.week;
 
     diaryBookmarks.forEach((bookmark) => {
-      bookmark.addEventListener("click", (event) => {
-        event.preventDefault();
-        const entryId = bookmark.getAttribute("href").slice(1);
-        const entry = document.getElementById(entryId);
-        if (! || !entry) return;
+      bookmark.classList.toggle(
+        "is-active",
+        bookmark.dataset.week === activeWeek
+      );
+    });
+  }
 
-        selectedDiaryEntryId = entryId;
-        setActiveDiaryBookmark(entryId);
-        const entryTop = entry.getBoundingClientRect().top;
-        const diaryTop = .getBoundingClientRect().top;
-        .scrollTo({
-          top: Math.max(0, .scrollTop + entryTop - diaryTop - 72),
-          behavior: "smooth"
-        });
-        history.replaceState(null, "", "#" + entryId);
-      });
+
+  function updateDiaryBookmark() {
+    if (!diaryScroller || diaryEntries.length === 0) return;
+
+    const scrollerTop =
+      diaryScroller.getBoundingClientRect().top;
+
+    const activeLine = scrollerTop + 80;
+
+    let activeEntry = diaryEntries[0];
+
+    diaryEntries.forEach((entry) => {
+      const entryTop =
+        entry.getBoundingClientRect().top;
+
+      if (entryTop <= activeLine) {
+        activeEntry = entry;
+      }
     });
 
-    if () {
-      diaryScroller.addEventListener("scroll", updateDiaryBookmark, { passive: true });
-      diaryScroller.addEventListener("wheel", () => {
+    setActiveDiaryBookmark(activeEntry.id);
+  }
+
+
+  /* =========================
+     KLIKK PÅ UKE
+     ========================= */
+
+  diaryBookmarks.forEach((bookmark) => {
+    bookmark.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const entryId =
+        bookmark.getAttribute("href").slice(1);
+
+      const entry =
+        document.getElementById(entryId);
+
+      if (!diaryScroller || !entry) return;
+
+      selectedDiaryEntryId = entryId;
+
+      setActiveDiaryBookmark(entryId);
+
+      const entryTop =
+        entry.getBoundingClientRect().top;
+
+      const diaryTop =
+        diaryScroller.getBoundingClientRect().top;
+
+      diaryScroller.scrollTo({
+        top: Math.max(
+          0,
+          diaryScroller.scrollTop +
+          entryTop -
+          diaryTop -
+          72
+        ),
+        behavior: "smooth"
+      });
+
+      history.replaceState(
+        null,
+        "",
+        "#" + entryId
+      );
+    });
+  });
+
+
+  /* =========================
+     OPPDATER AKTIV UKE
+     ========================= */
+
+  if (diaryScroller) {
+
+    diaryScroller.addEventListener(
+      "scroll",
+      updateDiaryBookmark,
+      { passive: true }
+    );
+
+    diaryScroller.addEventListener(
+      "wheel",
+      () => {
         selectedDiaryEntryId = null;
         updateDiaryBookmark();
-      }, { passive: true });
-      diaryScroller.addEventListener("touchstart", () => {
+      },
+      { passive: true }
+    );
+
+    diaryScroller.addEventListener(
+      "touchstart",
+      () => {
         selectedDiaryEntryId = null;
         updateDiaryBookmark();
-      }, { passive: true });
-      window.addEventListener("resize", syncDiaryHeight);
-      syncDiaryHeight();
-      updateDiaryBookmark();
-    }
+      },
+      { passive: true }
+    );
 
-const diarySection = document.getElementById("dagbok");
+    window.addEventListener(
+      "resize",
+      syncDiaryHeight
+    );
 
-if (diarySection && diaryScroller) {
+    syncDiaryHeight();
+    updateDiaryBookmark();
+  }
 
-    let diaryLocked = false;
+
+  /* =========================
+     LÅS SCROLLING TIL DAGBOK
+     ========================= */
+
+  const diarySection =
+    document.getElementById("dagbok");
+
+  if (diarySection && diaryScroller) {
+
+    let diaryMode = "outside";
+    let aligningDiary = false;
+
 
     function alignDiaryToViewport() {
-        const navHeight = nav ? nav.offsetHeight : 0;
 
-        const targetY =
-            window.scrollY +
-            diarySection.getBoundingClientRect().top -
-            navHeight -
-            10;
+      const navHeight =
+        nav ? nav.offsetHeight : 0;
 
-        window.scrollTo({
-            top: targetY,
-            behavior: "smooth"
-        });
+      const targetY =
+        window.scrollY +
+        diarySection.getBoundingClientRect().top -
+        navHeight -
+        10;
+
+      aligningDiary = true;
+
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth"
+      });
+
+      /*
+       * Gir smooth-scroll tid
+       * til å bli ferdig.
+       */
+      setTimeout(() => {
+        aligningDiary = false;
+      }, 400);
     }
 
-    window.addEventListener("wheel", (event) => {
 
-        const rect = diarySection.getBoundingClientRect();
-        const navHeight = nav ? nav.offsetHeight : 0;
+    window.addEventListener(
+      "wheel",
+      (event) => {
 
-        // Er brukeren kommet inn i Dagbok-området?
-        const diaryIsInView =
-            rect.top < window.innerHeight * 0.65 &&
-            rect.bottom > navHeight + 100;
-
-        if (!diaryIsInView) {
-            diaryLocked = false;
-            return;
+        /*
+         * Mens Dagbok flyttes på plass
+         * lar vi ikke musehjulet starte
+         * en ny scrolling.
+         */
+        if (aligningDiary) {
+          event.preventDefault();
+          return;
         }
 
-        const scrollingDown = event.deltaY > 0;
-        const scrollingUp = event.deltaY < 0;
 
-        const atTop = diaryScroller.scrollTop <= 0;
+        const rect =
+          diarySection.getBoundingClientRect();
+
+        const navHeight =
+          nav ? nav.offsetHeight : 0;
+
+        const scrollingDown =
+          event.deltaY > 0;
+
+        const scrollingUp =
+          event.deltaY < 0;
+
+        const atTop =
+          diaryScroller.scrollTop <= 1;
 
         const atBottom =
-            diaryScroller.scrollTop +
-            diaryScroller.clientHeight >=
-            diaryScroller.scrollHeight - 2;
+          diaryScroller.scrollTop +
+          diaryScroller.clientHeight >=
+          diaryScroller.scrollHeight - 2;
 
 
-        // Første gang vi kommer til Dagbok:
-        // plasser hele seksjonen riktig.
-        if (!diaryLocked) {
+        /*
+         * KOMMER NED TIL DAGBOK
+         */
 
-            event.preventDefault();
-
-            diaryLocked = true;
-
-            alignDiaryToViewport();
-
-            return;
-        }
-
-
-        // Hvis vi er inni Dagbok:
-        // send scrollingen til dagbok-containeren.
         if (
-            (scrollingDown && !atBottom) ||
-            (scrollingUp && !atTop)
+          diaryMode === "outside" &&
+          scrollingDown &&
+          rect.top > navHeight &&
+          rect.top < window.innerHeight * 0.65
         ) {
 
+          event.preventDefault();
+
+          diaryMode = "inside";
+
+          alignDiaryToViewport();
+
+          return;
+        }
+
+
+        /*
+         * KOMMER OPP TIL DAGBOK
+         * FRA SEKSJONEN UNDER
+         */
+
+        if (
+          diaryMode === "outside" &&
+          scrollingUp &&
+          rect.bottom > navHeight &&
+          rect.bottom < window.innerHeight
+        ) {
+
+          event.preventDefault();
+
+          diaryMode = "inside";
+
+          alignDiaryToViewport();
+
+          return;
+        }
+
+
+        /*
+         * SCROLL INNI DAGBOK
+         */
+
+        if (diaryMode === "inside") {
+
+          /*
+           * Scroller nedover inne
+           * i Dagbok.
+           */
+          if (
+            scrollingDown &&
+            !atBottom
+          ) {
+
             event.preventDefault();
 
-            diaryScroller.scrollBy({
-                top: event.deltaY,
-                behavior: "auto"
-            });
+            diaryScroller.scrollTop +=
+              event.deltaY;
 
-          requestAnimationFrame(updateDiaryBookmark);
+            requestAnimationFrame(
+              updateDiaryBookmark
+            );
 
             return;
+          }
+
+
+          /*
+           * Scroller oppover inne
+           * i Dagbok.
+           */
+          if (
+            scrollingUp &&
+            !atTop
+          ) {
+
+            event.preventDefault();
+
+            diaryScroller.scrollTop +=
+              event.deltaY;
+
+            requestAnimationFrame(
+              updateDiaryBookmark
+            );
+
+            return;
+          }
+
+
+          /*
+           * Bunnen av Dagbok er nådd.
+           * Slipp brukeren videre nedover.
+           */
+          if (
+            scrollingDown &&
+            atBottom
+          ) {
+
+            diaryMode = "passed-down";
+
+            return;
+          }
+
+
+          /*
+           * Toppen av Dagbok er nådd.
+           * Slipp brukeren videre oppover.
+           */
+          if (
+            scrollingUp &&
+            atTop
+          ) {
+
+            diaryMode = "passed-up";
+
+            return;
+          }
         }
 
 
-        // Nådde bunnen -> tillat scrolling videre nedover siden.
-        if (scrollingDown && atBottom) {
-            diaryLocked = false;
+        /*
+         * Når Dagbok ikke lenger
+         * er synlig gjør vi den klar
+         * til neste gang brukeren
+         * kommer tilbake.
+         */
+
+        if (
+          rect.bottom < navHeight ||
+          rect.top > window.innerHeight
+        ) {
+
+          diaryMode = "outside";
         }
 
+      },
+      { passive: false }
+    );
+  }
 
-        // Nådde toppen -> tillat scrolling tilbake oppover siden.
-        if (scrollingUp && atTop) {
-            diaryLocked = false;
+
+  /* =========================
+     PERSONKORT
+     ========================= */
+
+  const personCards = [
+    ...document.querySelectorAll(
+      ".person-card-clickable"
+    )
+  ];
+
+  personCards.forEach((card) => {
+
+    card.addEventListener(
+      "click",
+      (event) => {
+
+        if (event.target.closest("a")) {
+          return;
         }
 
-    }, { passive: false });
-}
-      
-    const personCards = [...document.querySelectorAll(".person-card-clickable")];
-    personCards.forEach((card) => {
-      card.addEventListener("click", (event) => {
-        if (event.target.closest("a")) return;
         const href = card.dataset.href;
-        if (href) window.location.href = href;
-      });
 
-      card.addEventListener("keydown", (event) => {
-        if (event.key !== "Enter" && event.key !== " ") return;
+        if (href) {
+          window.location.href = href;
+        }
+      }
+    );
+
+
+    card.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key !== "Enter" &&
+          event.key !== " "
+        ) {
+          return;
+        }
+
         event.preventDefault();
+
         const href = card.dataset.href;
-        if (href) window.location.href = href;
-      });
-    });
-  </script>
+
+        if (href) {
+          window.location.href = href;
+        }
+      }
+    );
+  });
+
+</script>
 </body>
 </html>
