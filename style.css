@@ -304,7 +304,7 @@ h2 {
     height: calc(100vh - 260px);
     max-height: 650px;
     overflow-y: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior: auto;
     scroll-padding-top: 72px;
 }
 
