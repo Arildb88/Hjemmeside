@@ -438,6 +438,8 @@
           activeId = section.id;
         }
       });
+        setActiveNav(activeId);
+}
 
     let ticking = false;
     function requestUpdate() {
@@ -523,6 +525,99 @@
       updateDiaryBookmark();
     }
 
+const diarySection = document.getElementById("dagbok");
+
+if (diarySection && diaryScroller) {
+
+    let diaryLocked = false;
+
+    function alignDiaryToViewport() {
+        const navHeight = nav ? nav.offsetHeight : 0;
+
+        const targetY =
+            window.scrollY +
+            diarySection.getBoundingClientRect().top -
+            navHeight -
+            10;
+
+        window.scrollTo({
+            top: targetY,
+            behavior: "smooth"
+        });
+    }
+
+    window.addEventListener("wheel", (event) => {
+
+        const rect = diarySection.getBoundingClientRect();
+        const navHeight = nav ? nav.offsetHeight : 0;
+
+        // Er brukeren kommet inn i Dagbok-området?
+        const diaryIsInView =
+            rect.top < window.innerHeight * 0.65 &&
+            rect.bottom > navHeight + 100;
+
+        if (!diaryIsInView) {
+            diaryLocked = false;
+            return;
+        }
+
+        const scrollingDown = event.deltaY > 0;
+        const scrollingUp = event.deltaY < 0;
+
+        const atTop = diaryScroller.scrollTop <= 0;
+
+        const atBottom =
+            diaryScroller.scrollTop +
+            diaryScroller.clientHeight >=
+            diaryScroller.scrollHeight - 2;
+
+
+        // Første gang vi kommer til Dagbok:
+        // plasser hele seksjonen riktig.
+        if (!diaryLocked) {
+
+            event.preventDefault();
+
+            diaryLocked = true;
+
+            alignDiaryToViewport();
+
+            return;
+        }
+
+
+        // Hvis vi er inni Dagbok:
+        // send scrollingen til dagbok-containeren.
+        if (
+            (scrollingDown && !atBottom) ||
+            (scrollingUp && !atTop)
+        ) {
+
+            event.preventDefault();
+
+            diaryScroller.scrollBy({
+                top: event.deltaY,
+                behavior: "auto"
+            });
+
+            return;
+        }
+
+
+        // Nådde bunnen -> tillat scrolling videre nedover siden.
+        if (scrollingDown && atBottom) {
+            diaryLocked = false;
+        }
+
+
+        // Nådde toppen -> tillat scrolling tilbake oppover siden.
+        if (scrollingUp && atTop) {
+            diaryLocked = false;
+        }
+
+    }, { passive: false });
+}
+      
     const personCards = [...document.querySelectorAll(".person-card-clickable")];
     personCards.forEach((card) => {
       card.addEventListener("click", (event) => {
