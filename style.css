@@ -25,6 +25,8 @@ html {
   scroll-snap-type: y proximity;
 }
 
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -299,10 +301,17 @@ h2 {
     padding: 60px 20px;
 }
 
+#dagbok {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 .dagbok-scroll {
-    max-height: 550px;
+    height: calc(100vh - 260px);
+    max-height: 650px;
     overflow-y: auto;
-  scroll-padding-top: 72px;
+    overscroll-behavior: contain;
+    scroll-padding-top: 72px;
 }
 
 .dagbok-scroll section {
