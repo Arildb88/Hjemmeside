@@ -346,7 +346,7 @@ h2 {
 
 .diary-timeline {
     position: sticky;
-    top: 65px;
+    top: 70px;
     z-index: 10;
     background: var(--card);
 
