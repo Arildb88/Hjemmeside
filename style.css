@@ -335,12 +335,16 @@ h2 {
 }
 
 .diary-timeline {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-  gap: 14px 8px;
-  align-self: stretch;
-  padding: 0 0 2px;
+    position: sticky;
+    top: 65px;
+    z-index: 10;
+    background: var(--card);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+    gap: 14px 8px;
+
+    padding: 12px 8px;
 }
 
 .diary-timeline::before {
