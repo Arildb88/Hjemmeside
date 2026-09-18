@@ -453,25 +453,18 @@ h2 {
     margin-bottom: 0;
 }
 
-.status-images {
+.status-image {
+    margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 24px;
-    min-width: 0;
 }
 
-.status-images figure {
-    margin: 0;
-    width: 100%;
-}
-
-.status-images img {
+.status-image img {
     display: block;
-    width: 100%;
-    max-width: none;
+    width: 80%;
+    max-width: 550px;
     height: auto;
-    margin: 0;
+    object-fit: contain;
     border-radius: 8px;
 }
 
