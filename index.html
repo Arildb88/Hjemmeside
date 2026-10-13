@@ -41,7 +41,7 @@
 
       <div class="person-grid">
         <article class="person-card person-card-clickable" data-href="arild.html" tabindex="0" role="link" aria-label="Ga til Arild-profil">
-            <img src="images/arild-profilbilde.png" alt="Arild Bjørnetrø" class="profile-photo">
+            <img src="images/Arild.jpg" alt="Arild Bjørnetrø" class="profile-photo">
             <h3>Arild Bjørnetrø</h3>
             <p class="role">Student - IT og informasjonssystemer</p>
 <p>
@@ -81,7 +81,7 @@
           </article>
 
         <article class="person-card person-card-clickable" data-href="jonas.html" tabindex="0" role="link" aria-label="Ga til Jonas-profil">
-          <img src="images/Jonas-Profilbilde.jpg" alt="Jonas Bendal" class="profile-photo">
+          <img src="images/Jonas.jpg" alt="Jonas Bendal" class="profile-photo">
           <h3>Jonas Bendal</h3>
           <p class="role">Student - IT og informasjonssystemer</p>
           <p>
@@ -223,17 +223,28 @@
 
     <section id="status-2" class="section-card snap-panel">
       <h2>Status 2</h2>
-      <p>
-        Dette er status 2.
-      </p>
+      
 
   <!-- En overskrift -->
     <div class="status-layout">
         <div class="status-text">
-            <h3>En Overskrift</h3>
+            <h3>Erfaringer siden Status 1 </h3>
 
             <p>
-                Erfaringer siden Status 1
+                Vi har vært i praksis hos Phonero 12 timer i uken siden midten av August, og har siden da fått opplæring i forskjellige rammeverk/programmer Phonero bruker.
+                Bot-teamet har hovedfokuset på Zendesk og hvordan Phonero bruker denne plattformen hos flere avdelinger.
+                <br><br>
+                Zendesk samler alle kunde henvendelser, loggfører samtalene for kundeservice og eskalerer henvendelser videre til saksbehandlere.
+                Vi har i hovedsak fortsatt med å utvikle procedyren for Ansattkjøp, slik at Phonelia kan gjøre private bestillinger for ansatte i bedrifter som tillater Ansattkjøp.
+                Tilleggstjenester som kan bestilles er TvillingSIM, DataSIM, Data i utlandet og andre tilleggstjenester som Phonero tilbyr.
+                <br><br>
+                Vi lager use-cases som er etablerte "temaer", agenten matcher med hva som blir spurt av kunden.
+                Disse use-cases kan være enten “procedures”, som genererer et helhetlig flytdiagram ut av en promt som er skrevet av oss.
+                Eller “dialogues” som er mer strukturerte og faste steg bestemt av oss.
+                <br><br> 
+                I disse use-casene brukes det “actions” som kan utføre handlinger innen samtale-session, som eksempel sette verdier, lagre parametere, flagge, osv.
+                <br>
+                Det kan også brukes “api-integrations” som er api-kall for databasespørringer, hvor man henter eller skriver nødvendig informasjon om kunden for å enten svare bedre på kundens spørsmål eller utføre konkrete handlinger.
             </p>
         </div>
 
@@ -246,20 +257,28 @@
 
     </div>
 
-<h3>Video?</h3>
+<h3>Video av interaksjon med Chatbot</h3>
       <div class="video-container">
-      <iframe 
-          src="https://www.youtube.com/embed/"
-          title="Status2"
-          frameborder="0"
-          allowfullscreen>
-          </iframe>
-      </div>
+    <video width="100%" controls>
+        <source src="videos/status2.mp4" type="video/mp4">
+        Nettleseren din støtter ikke videoavspilling.
+    </video>
+</div>
 
       
-<h3>Utfordringer</h3>
+<h3>Ny Oppgave!</h3>
     <p>
-      spennende utfordringer kommer
+    Vi har fått en ny utfordring/hovedoppgave ettersom Ansattkjøp ble rullet ut i høstferien og vår sjef fikk TvillingSIM til å fungere. Da var det bare et tastetrykk forskjell fra DataSIM, så de rullet ut en løsning for dagens kunder.
+    <br><br>
+    Vi skal nå se på hvordan en annen chatbot kan svare innloggede kunders meldinger, type "epost", som går til kundeservice. Chatbotten skal kunne svare basert på knowledge i knowledgebasen som Phonelia har tilgjengelig.
+    <br><br>
+    I uke 41 var det en bug i Zendesk som gjorde at vi ikke fikk testet dette mot spesifike kunder. Vi spurte da om vi ikke kunne lese logger fra eksisterende kunder for å se hva er det chatbotten ikke klarer å svare på i dag for så å kunne oppdatere chatbotten til å kunne svare på de henvendelsene vi tenker at den burde kunne svare på
+    <br><br>
+    Vi har allerede funnet flere henvendelser som vi har notert og sendt videre til Marius og Harris (Bot-teamet) for å se om de kan lage gode løsninger på funnene våre, siden dette er en live chatbot vil endringer påvirke eksisterende kunder. Derfor er det ikke vi som endrer i proocedures og dialoger for disse løsningene.
+    <br><br>
+    Med den nye oppgaven vi har fått så føler vi at vi endelig kan gi noe tilbake til Phonero som kan være med på å fremme verdi for selskapet og gjøre hverdagen enklere for kundeservice avdelingen.
+    
+    <div class="chatbot-challenges"></div>
     </p>
 
       
